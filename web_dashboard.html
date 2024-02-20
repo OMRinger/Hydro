@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HydroHarvest Dashboard</title>
+</head>
+<body>
+    <h1>HydroHarvest System Status</h1>
+    <div id="soilMoisture"></div>
+    <div id="weatherForecast"></div>
+    <script>
+        // Example function to fetch and display soil moisture and weather data
+        function fetchData() {
+            // Replace with the actual API endpoint
+            fetch('http://yourapi.com/soilmoisture')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('soilMoisture').innerText = 'Soil Moisture: ' + data.moisture;
+                });
+            // Similar fetch for weather forecast data
+        }
+        
+        // Call fetchData on page load
+        window.onload = function() {
+            fetchData();
+        };
+    </script>
+</body>
+</html>
